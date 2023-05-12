@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController{
 
-	@GetMapping("/test")
+	@GetMapping(value="/test", produces="application/json")
     public ResponseEntity<String> test() {
     	return new ResponseEntity<>("Hello World!", HttpStatus.OK);
+    }
+	
+	@GetMapping(value="/test2", produces="application/json")
+    public ResponseEntity<String> test2() {
+    	return new ResponseEntity<>("Hello World2!", HttpStatus.OK);
     }
 }
