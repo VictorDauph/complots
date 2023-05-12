@@ -1,10 +1,10 @@
-package complotback.complotback;
+package com.complotBack.complot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ComplotbackApplicationTests {
+class ComplotApplicationTests {
 
 	@Test
 	void contextLoads() {

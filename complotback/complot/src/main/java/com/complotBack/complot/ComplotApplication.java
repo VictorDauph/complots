@@ -1,14 +1,13 @@
-package complotback.complotback;
+package com.complotBack.complot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ComplotbackApplication {
+public class ComplotApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ComplotbackApplication.class, args);
-		System.out.println("hello world");
+		SpringApplication.run(ComplotApplication.class, args);
 	}
 
 }
