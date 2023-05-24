@@ -44,7 +44,7 @@ public class JwtSecurityConfig {
                 		.requestMatchers("/swagger-resources/**").permitAll()
                 		.requestMatchers("/v3/api-docs/**").permitAll()
                 		.requestMatchers("/").permitAll()
-                		.requestMatchers("/authenticate/").permitAll()
+                		.requestMatchers("/authentication/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                         ).sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()

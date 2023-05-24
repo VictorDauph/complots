@@ -1,18 +1,13 @@
 package com.complotBack.complot.authentication.dto;
 
-import java.util.Collection;
+import com.complotBack.complot.models.UserApp;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+public class JwtUserDetails extends UserApp {
 
-public class JwtUserDetails extends User {
-
-	private static final long serialVersionUID = -4640069446204663456L;
 	public final Long id;
 
-    public JwtUserDetails(final Long id, final String username, final String hash,
-                          final Collection<? extends GrantedAuthority> authorities) {
-        super(username, hash, authorities);
+    public JwtUserDetails(final Long id, final String username, final String login, final String hash) {
+        super(username,login, hash);
         this.id = id;
     }
 

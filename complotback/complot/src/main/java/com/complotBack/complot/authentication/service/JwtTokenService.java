@@ -11,6 +11,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.complotBack.complot.authentication.dto.JwtUserDetails;
 
 import lombok.CustomLog;
 
@@ -27,7 +28,7 @@ public class JwtTokenService {
         this.verifier = JWT.require(this.hmac512).build();
     }
 
-    public String generateToken(final UserDetails userDetails) {
+    public String generateToken(final JwtUserDetails userDetails) {
         final Instant now = Instant.now();
         return JWT.create()
                 .withSubject(userDetails.getUsername())
