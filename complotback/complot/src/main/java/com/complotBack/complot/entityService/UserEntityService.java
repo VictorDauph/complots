@@ -18,7 +18,7 @@ public class UserEntityService {
 	public long logUser(String username) {
 		
 		try {
-		return userRepository.findOneByUsername(username).get().getId();
+		return userRepository.getIdByUsername(username).get();
 		}catch (Exception e) {
 			throw e;
 		}

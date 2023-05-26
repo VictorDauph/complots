@@ -3,7 +3,7 @@ package com.complotBack.complot.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.complotBack.complot.dto.UserLoginDto;
+import com.complotBack.complot.dto.UserDto;
 import com.complotBack.complot.entityService.UserEntityService;
 import com.complotBack.complot.models.User;
 
@@ -23,8 +23,8 @@ public class UserService {
 		}
 	}
 	
-	public long logUser(UserLoginDto userLoginDto) {
+	public long logUser(UserDto dto) {
 		
-		return userEntityService.logUser(userLoginDto.getUsername());
+		return userEntityService.logUser(dto.getUsername());
 	}
 }

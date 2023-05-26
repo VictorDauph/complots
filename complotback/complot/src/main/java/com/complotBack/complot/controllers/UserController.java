@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.complotBack.complot.dto.UserCreationDto;
-import com.complotBack.complot.dto.UserLoginDto;
+
+import com.complotBack.complot.dto.UserDto;
 import com.complotBack.complot.models.User;
 import com.complotBack.complot.service.UserService;
 
 @RestController
 @RequestMapping("/user")
-public class UsersController {
+public class UserController {
 	
 	@Autowired
 	UserService userService;
 	
 	@PostMapping(path = "/register",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> register(@RequestBody UserCreationDto userDto){
+	public ResponseEntity<String> register(@RequestBody UserDto userDto){
 		User newUser= new User(userDto);
 		try {
 			userService.createUser(newUser);
@@ -35,7 +35,7 @@ public class UsersController {
 	}
 	
 	@PostMapping(path="/login",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Long> login(@RequestBody UserLoginDto dto){
+	public ResponseEntity<Long> login(@RequestBody UserDto dto){
 		
 		try {
 			return new ResponseEntity<Long>(userService.logUser(dto), HttpStatus.ACCEPTED);
